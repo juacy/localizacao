@@ -1,0 +1,220 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{cancel}
+
+\newcommand\ds{\displaystyle}
+
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Teorema}
+\newtheorem{corollary}[theorem]{Corolário}
+\newtheorem{proposition}[theorem]{Proposição}
+\newtheorem{example}[theorem]{Exemplo}
+\newtheorem{remark}[theorem]{Observação}
+\newtheorem{notation}[theorem]{Notação}
+\newtheorem{definition}[theorem]{Definição}
+\newtheorem{nota}[theorem]{Remark}
+
+\begin{document}
+\title {Estudos TCC}
+\maketitle
+\vspace{0.7cm}
+
+\section{Anéis}
+ 
+\definition[Anel]{Um anel R é um conjunto com duas operações $+ \textrm{ e } *$ tal que dados $x, y, z \in R$ temos:
+\begin{enumerate}
+	\item $x+(y+z)=(x+y)+z$
+	\item $x+y \in R$
+	\item $\exists 0$ tal que $\forall x, x+0=x$
+	\item $x+y=y+x$
+	\item $\exists -x$ tal que $ x, x+(-x)=x$
+	\item $a*b \in R$
+	\item $(a*b)*c=a*(b*c)$
+	\item $a*(b+c)=a*b+a*c$
+	\item $\exists 1 \textrm{ tal que } a*1=1*a=a$
+\end{enumerate}
+}
+
+\remark{A definição de anel varia de autor para autor, alguns consideram anéis comutativos com unidade, outro já não consideram a existência do neutro multiplicativo}
+
+Quando a multiplicação também é comutativa, isto é $a*b=b*a$ chamamos de anel comutativo.
+
+\example{Temos que $\mathbb{Z},\mathbb{Q}, \mathbb{R} $ com as operações usuais de soma e produto são anéis.}
+
+\proposition{Seja R um anel não trivial, se $x \in R$ então $x*0=0$}
+\begin{proof}
+Temos que $$x*0=x*(0+0)=x*0+x*0$$ mas como existe o oposto de $x*0$ podemos somar
+$$x*0-x*0=x*0+x*0-x*0$$ logo $$0=x*0$$
+\end{proof}
+
+Temos que caso $1=0$ o anel é trivial. Já que $x=x*1=x*0=0$.
+
+\definition[Subaneis]
+
+\definition[Homomorfismo] Uma função entre os anéis $A$ e $B$ é dito homomorfismo se:
+\begin{enumerate}
+	\item $f(x+y)=f(x)+f(y)$
+	\item $f(xy)=f(x)f(y)$
+\end{enumerate}
+ 
+\definition[Ideais(maximal e primo)]
+
+\definition[Divisores de zero]
+
+\definition[Anéis quociente]
+
+
+\section{Corpo de fração}
+
+\section{Localização em anéis comutativos}
+
+Vamos seguir a demonstração a partir de um anel $A$ sem unidade, no livro temos a demonstração feita com anel com unidade.
+
+\begin{definition}
+	Um subconjunto S de um anel A é dito um conjunto multiplicativo se $1 \in S$ e $ x\cdot y \in S$ para todo $x , y \in S$.
+\end{definition}
+
+Agora que já temos todas as definições necessárias para iniciar a construção, vamos começar.
+
+\begin{definition}
+	Seja A um anel e S um conjunto multiplicativo de A. Vamos definir uma relação em $A \times S$ como $$(a,b) \equiv (c, d) \Leftrightarrow (ad-bc)u=0$$ para algum u $\in S$.
+\end{definition}
+
+Esta relação, é uma relação de equivalência.
+
+\begin{proof} Vamos mostrar que é uma relação reflexiva, simétrica e transitiva.
+	
+	\begin{enumerate}
+		\item [Reflexiva]  $(a,b) \equiv (a, b)$, de fato, pois $ab-ba = 0$, já que estamos trabalhando com um anel comutativo.
+		\item [Simétrica] Temos que $(a,b) \equiv (c, d)$ nos leva a $(ad-bc)u=0$ mas como o anel é comutativo podemos trocar a ordem dos fatores $(da-cb)u=0$. Multiplicando por -1 chegamos a $(cb-da)u=0$ que é igual a $(c,d) \equiv (a, b)$.
+		\item [Transitividade] Seja $(a,b) \equiv (c, d)$ e $(c,d) \equiv (e, f)$, devemos chegar em $(a,b) \equiv (e, f)$.
+		De $(a,b) \equiv (c, d)$ temos $(ad-bc)u_1=0$ para algum $u_1 \in S$.
+		
+		De $(c,d) \equiv (e, f)$ temos $(cf-de)u_2=0$ para algum $u_2 \in S$.
+		
+		Multiplicando a primeira equação por $fu_2$ e a segunda por $bu_1$ chegamos a 
+		$$(fad-fbc)u_2u_1=0$$
+		$$(bcf-bde)u_2u_1=0$$
+		
+		Novamente, vamos usar a comutatividade para reorganizar as expressões
+		
+		$$(afd-fbc)u_2u_1=0 \ (*)$$
+		$$(fbc-bed)u_2u_1=0$$
+		
+		Da segunda expressão temos que $fbcu_2u_1 = bedu_2u_1$
+		
+		Substituindo isso em (*) temos 
+		$$(afd-bed)u_2u_1=0$$
+		$$(af-be)du_2u_1=0$$
+		Como S é multiplicativo e $u_1 \in S$, logo $du_2u_1 \in S$ e portanto $(a,b) \equiv (e, f)$.
+	\end{enumerate}
+	
+	Portanto, a relação definida em $A \times S$ é de equivalência.
+	
+\end{proof}
+
+\begin{notation}
+	Denotamos por $S^{-1}A$ o conjunto das classes de equivalência. Denotamos por $\frac{a}{s}$ a classe de equivalência de (a,s).
+\end{notation}
+
+Vamos agora definir as operações de soma e multiplicação em $S^{-1}A$.
+
+\begin{definition}
+	A soma em $S^{-1}A$ é definida por $\frac{a}{s} + \frac{b}{t}=\frac{at+sc}{st}$
+\end{definition}
+
+\begin{definition}
+	A multiplicação em $S^{-1}A$ é definida por $\frac{a}{s} . \frac{b}{t} = \frac{ab}{st}$
+\end{definition}
+
+Vamos verificar se as operações estão bem definidas, ou seja, se as operações acima não dependem do representante escolhido da classe.
+
+\begin{proposition}
+	As operações de soma e multiplicação em $S^{-1}A$ não dependem dos representantes da classe.
+\end{proposition}
+
+\begin{proof}
+	Seja $\frac{a}{s}=\frac{a'}{s'}$, vamos fazer as operações com esses dois representantes e ver que a operação não depende da escolha. Sabemos que $(as'-sa')u=0$ para algum u.
+	
+	$\frac{a}{s} + \frac{b}{t}=\frac{at+sc}{st}$
+	
+	$\frac{a'}{b'} + \frac{c}{d}=\frac{a'd+b'c}{b'd}$
+	
+	$(ad+bc)b'd-bd(a'd+b'c)=adb'd+\cancel{bcb'd}-bda'd-\cancel{bdb'c}=adb'd-bda'd$
+	
+	Multiplicando tudo por u temos 
+	
+	$uab'dd-ua'bdd$ mas como $ab'u=ba'u$, logo $uab'dd-ua'bdd=(ab'dd-a'bdd)u=0$, ou seja, são "iguais" os resultados da soma.
+	
+	$\frac{a}{b} . \frac{c}{d} = \frac{ac}{bd}$
+	
+	$\frac{a'}{b'} . \frac{c}{d} = \frac{a'c}{b'd}$
+	
+	Utilizando novamente a relação temos que $acb'd-bda'c=ab'cd-a'bcd$ multiplicando por u vamos ficar com $ab'cdu-a'bcdu$ e usando $ab'u=ba'u$ ficaremos com $ab'cdu-a'bcdu=0$
+\end{proof}
+
+$S^{-1}A$ com a soma e a multiplicação definida acima é um anel.
+
+Agora vamos ver alguns exemplos de anéis que podemos fazer essa construção. Mas antes vamos o que é um domínio de integridade, que é um tipo especial de anel.
+
+\begin{definition}
+	Um domínio de integridade (ou simplesmente domínio) é um anel comutativo unitário A tal que se $a, b \in A$ e $a\cdot b=0$ então $a=0$ ou $b=0$.
+\end{definition}
+
+\begin{example}
+	O caso quando A é um domínio de integridade é um caso particular do anel de frações, isso acontece pois $S=A-\{0\}$ é um conjunto multiplicativo. 
+\end{example}
+
+Para provar o exemplo acima, basta provar a seguinte proposição.
+
+\begin{proposition}
+	Seja A um domínio de integridade, então o conjunto $C = A - \{0\}$ é um conjunto multiplicativo.
+\end{proposition}
+
+\begin{proof}
+	Como $1 \in A$, logo $1 \in C$. Temos também que para $xy$ com $x,y \in C$ $xy \neq 0$, pois A é um domínio de integridade e x e y não podem ser nulos. Portanto C é fechado na multiplicação, logo é um conjunto multiplicativo.
+\end{proof}
+
+\begin{example}
+	Tomando como nosso anel os inteiros ($\mathbb{Z}$) e o nosso conjunto multiplicativo como $S=\mathbb{Z} - {0}$, teremos $\frac{a}{b}$, onde  $a \in \mathbb{Z}$ e $b \in S$, ou seja, b deve ser inteiro não nulo e isso é exatamente a definição dos números racionais, que sabemos que é um corpo.
+\end{example}
+
+\begin{example}
+	Podemos tomar como $A=\mathbb{Z}$ e S sendo as potências de 2, ou seja, $S=\{2^n\}$ com $n \geq 0$, dessa forma $S^{-1}A=\{\frac{a}{b}$ tal que $ a \in A$ e $b=2^n \}$ com $n \geq 0$.
+\end{example}
+
+\begin{example}
+	Temos que $S^{-1}A$ será o anel zero se tivemos que $0 \in S$. De fato, pois se $0 \in S$ podemos tomar u da relação de equivalência como 0, dessa forma $(ad-bc)0=0$ para todo $\frac{a}{b}$ e $\frac{c}{d}$, dessa forma todos os elementos são equivalentes entre si, em particular serão equivalente ao elemento $\frac{0}{0}$, ou seja, $S^{-1}A$ pode ser representado por um único elemento, o $\frac{0}{0}$
+\end{example}
+
+Um importante homomorfismo é $f(a)=a/1$ para $f:A->s^{-1}A$.
+
+f definada para um anel sem unidade
+
+quando f é injetora? <=> sem divisor de zero
+
+\begin{proposition} Seja $g:A -> B$ um homomorfismo de anéis tal que $g(s)$ é invertível em $B$ para todo $s \in S$. Então existe um único homomorfismo de anel $h:S^{-1}A ->B$ tal que $g = hof$
+\end{proposition}
+
+
+
+
+\newpage
+
+\begin{thebibliography}{20}
+	
+	\bibitem{Atiyah}  Atiyah M. F.; MacDonald M. G., Introduction to Commutative Algebra . Addison-wesley publishing company, 1969.
+	
+	\bibitem{Fraleigh}  Fraleigh, J. B., A first course in abstract algebra. Person , 2003.
+	
+	\bibitem{Herstein} Herstein I. N., Topics in algebra. University of Chicago, 1975.	
+	
+\end{thebibliography}
+
+\end{document}
+
