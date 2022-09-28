@@ -40,7 +40,7 @@
 \end{enumerate}
 }
 
-\remark{A definição de anel varia de autor para autor, alguns consideram anéis comutativos com unidade, outro já não consideram a existência do neutro multiplicativo}
+\remark{A definição de anel varia de autor para autor, alguns consideram anéis comutativos com unidade, outro já não consideram a existência do neutro multiplicativo. Também existem anéis sem associatividade, então podemos ter um anel sem nenhuma propriedade sobre a multiplicação}
 
 Quando a multiplicação também é comutativa, isto é $a*b=b*a$ chamamos de anel comutativo.
 
@@ -54,35 +54,37 @@ $$x*0-x*0=x*0+x*0-x*0$$ logo $$0=x*0$$
 
 Temos que caso $1=0$ o anel é trivial. Já que $x=x*1=x*0=0$.
 
-\definition[Subaneis]
+\definition[Subaneis] Colocar a definição de subanel aqui
 
-\definition[Homomorfismo] Uma função entre os anéis $A$ e $B$ é dito homomorfismo se:
+\definition[Homomorfismo] Uma função $f:A \rightarrow B $ é dita homomorfismo de anéis se:
 \begin{enumerate}
 	\item $f(x+y)=f(x)+f(y)$
 	\item $f(xy)=f(x)f(y)$
 \end{enumerate}
  
-\definition[Ideais(maximal e primo)]
+\definition[Ideais(maximal e primo)] Colocar a definição de ideal, ideal maximal, ideal primo
 
-\definition[Divisores de zero]
+\definition[Divisores de zero] Colocar a definição de divisores de zero
 
-\definition[Anéis quociente]
+\definition[Anéis quociente] Fazer a construção de quociente de anéis
 
 
 \section{Corpo de fração}
 
 \section{Localização em anéis comutativos}
 
-Vamos seguir a demonstração a partir de um anel $A$ sem unidade, no livro temos a demonstração feita com anel com unidade.
+Vamos seguir a demonstração a partir de um anel $A$ sem unidade, na referência \cite{Atiyah} temos a demonstração feita em anel com unidade.
 
 \begin{definition}
 	Um subconjunto S de um anel A é dito um conjunto multiplicativo se $1 \in S$ e $ x\cdot y \in S$ para todo $x , y \in S$.
 \end{definition}
 
+Mas como estamos partindo de um anel sem unidade, não faz sentido querer que $1 \in S$, então para o nosso caso vamos considerar que exista $a_s \neq 0$ tal que $a \in S$.
+
 Agora que já temos todas as definições necessárias para iniciar a construção, vamos começar.
 
 \begin{definition}
-	Seja A um anel e S um conjunto multiplicativo de A. Vamos definir uma relação em $A \times S$ como $$(a,b) \equiv (c, d) \Leftrightarrow (ad-bc)u=0$$ para algum u $\in S$.
+	Seja A um anel e S um conjunto multiplicativo de A. Vamos definir uma relação em $A \times S$ como $$(a,s) \equiv (b, t) \Leftrightarrow (at-sb)u=0$$ para algum $u \in S$.
 \end{definition}
 
 Esta relação, é uma relação de equivalência.
@@ -90,28 +92,61 @@ Esta relação, é uma relação de equivalência.
 \begin{proof} Vamos mostrar que é uma relação reflexiva, simétrica e transitiva.
 	
 	\begin{enumerate}
-		\item [Reflexiva]  $(a,b) \equiv (a, b)$, de fato, pois $ab-ba = 0$, já que estamos trabalhando com um anel comutativo.
-		\item [Simétrica] Temos que $(a,b) \equiv (c, d)$ nos leva a $(ad-bc)u=0$ mas como o anel é comutativo podemos trocar a ordem dos fatores $(da-cb)u=0$. Multiplicando por -1 chegamos a $(cb-da)u=0$ que é igual a $(c,d) \equiv (a, b)$.
-		\item [Transitividade] Seja $(a,b) \equiv (c, d)$ e $(c,d) \equiv (e, f)$, devemos chegar em $(a,b) \equiv (e, f)$.
-		De $(a,b) \equiv (c, d)$ temos $(ad-bc)u_1=0$ para algum $u_1 \in S$.
+		\item [Reflexiva]  $(a,s) \equiv (a, s)$, de fato, pois $as=sa$, já que estamos trabalhando com um anel comutativo, portanto $as-sa=0$ e assim $(as-sa)a_s=0$.
+		\item [Simétrica] Temos que $(a,s) \equiv (b, t)$ nos leva a $(at-sb)u=0$. Note que podemos somar o inverso aditivo do elemento $(at-sb)u$ em ambos lados da igualdade que nos leva a 
+		$$(at-sb)u-((at-sb)u)=-(at-sb)u$$
+		$$0=-(at-sb)u$$
+		$$0=(-at+sb)u$$
+		Como o anel A é comutativo
+		$$0=(sb-at)u$$
+		Usando a comutatividade novamente para reorganizar os produtos
+		$$0=(bs-ta)u$$
+		que é equivalente a 
+		$$(b,t) \equiv (a, s)$$
+		\item [Transitividade] Seja $(a,s) \equiv (b, t)$ e $(b,t) \equiv (c, r)$, devemos chegar em $(a,s) \equiv (c, r)$.
+		\\
 		
-		De $(c,d) \equiv (e, f)$ temos $(cf-de)u_2=0$ para algum $u_2 \in S$.
+		De $(a,s) \equiv (b, t)$ temos $(at-sb)u_1=0$ para algum $u_1 \in S$.
 		
-		Multiplicando a primeira equação por $fu_2$ e a segunda por $bu_1$ chegamos a 
-		$$(fad-fbc)u_2u_1=0$$
-		$$(bcf-bde)u_2u_1=0$$
+		De $(b,t) \equiv (c, r)$ temos $(br-tc)u_2=0$ para algum $u_2 \in S$.
 		
-		Novamente, vamos usar a comutatividade para reorganizar as expressões
+		Multiplicando a primeira equação por $ru_2$ e a segunda por $su_1$ chegamos a 
 		
-		$$(afd-fbc)u_2u_1=0 \ (*)$$
-		$$(fbc-bed)u_2u_1=0$$
+		$$ru_2(at-sb)u_1=0$$
+		$$su_1(br-tc)u_2=0$$
 		
-		Da segunda expressão temos que $fbcu_2u_1 = bedu_2u_1$
+		Utilizando a comutatividade para agrupar os termos em u.
 		
-		Substituindo isso em (*) temos 
-		$$(afd-bed)u_2u_1=0$$
-		$$(af-be)du_2u_1=0$$
-		Como S é multiplicativo e $u_1 \in S$, logo $du_2u_1 \in S$ e portanto $(a,b) \equiv (e, f)$.
+		$$r(at-sb)u_1u_2=0$$
+		$$s(br-tc)u_1u_2=0$$
+		
+		Aplicando a propriedade distributiva
+		
+		$$(rat-rsb)u_1u_2=0$$
+		$$(sbr-stc)u_1u_2=0$$
+		
+		Novamente utilizando a comutatividade para ajustar os termos
+		
+		$$(art-sbr)u_1u_2=0 (*)$$
+		$$(sbr-sct)u_1u_2=0 (**)$$
+		
+		Em (**) temos que ao aplicar a distributiva
+		
+		$$sbru_1u_2=sctu_1u_2$$
+		
+		Mas note que temos em (*) ao aplicar a distributiva 
+		
+		$$artu_1u_2=sbru_1u_2 (*)$$
+		
+		Então temos que 
+		
+		$$artu_1u_2=sctu_1u_2$$
+		$$artu_1u_2-sctu_1u_2=$$
+		$$(art-sct)u_1u_2$$
+		$$(ar-sc)tu_1u_2$$
+		
+		Mas como $t, u_1, u_2 \in S$ e $S$ é um conjunto fechado para a multiplicação, logo $tu_1u_2 \in S$ e portanto $(a,s) \equiv (c, r)$.
+		
 	\end{enumerate}
 	
 	Portanto, a relação definida em $A \times S$ é de equivalência.
@@ -119,46 +154,105 @@ Esta relação, é uma relação de equivalência.
 \end{proof}
 
 \begin{notation}
-	Denotamos por $S^{-1}A$ o conjunto das classes de equivalência. Denotamos por $\frac{a}{s}$ a classe de equivalência de (a,s).
+	Denotamos por $S^{-1}A$ o conjunto das classes de equivalência. Denotamos por $\frac{a}{s}$ a classe de equivalência de $(a,s)$.
 \end{notation}
 
 Vamos agora definir as operações de soma e multiplicação em $S^{-1}A$.
 
 \begin{definition}
-	A soma em $S^{-1}A$ é definida por $\frac{a}{s} + \frac{b}{t}=\frac{at+sc}{st}$
+	A soma em $S^{-1}A$ é definida por $(a,s)+(b,t)=(at+sb,st)$
 \end{definition}
 
 \begin{definition}
-	A multiplicação em $S^{-1}A$ é definida por $\frac{a}{s} . \frac{b}{t} = \frac{ab}{st}$
+	A multiplicação em $S^{-1}A$ é definida por $(a,s)*(b,t)=(ab,st)$
 \end{definition}
 
-Vamos verificar se as operações estão bem definidas, ou seja, se as operações acima não dependem do representante escolhido da classe.
+Vamos verificar se as operações estão bem definidas, ou seja, se as operações acima não dependem do representante da classe.
 
 \begin{proposition}
 	As operações de soma e multiplicação em $S^{-1}A$ não dependem dos representantes da classe.
 \end{proposition}
 
 \begin{proof}
-	Seja $\frac{a}{s}=\frac{a'}{s'}$, vamos fazer as operações com esses dois representantes e ver que a operação não depende da escolha. Sabemos que $(as'-sa')u=0$ para algum u.
+	Seja $(a,s)=(a',s')$, vamos fazer as operações com esses dois representantes e ver que a operação não depende da escolha. Sabemos que $(as'-sa')u=0$ para algum $u$.
 	
-	$\frac{a}{s} + \frac{b}{t}=\frac{at+sc}{st}$
+	\begin{enumerate}
+		\item[Soma] Vamos tomar as somas de  $(a,s)$ e $(a',s')$ com $(b,t)$.
+		
+		$$(a,s)+(b,t)=(at+sb,st)$$
+		$$(a',s')+(b,t)=(a't+s'b,s't)$$
+		
+		Quero mostrar que $(a,s)+(b,t)=(a',s')+(b,t)$, para isso vamos fazer 
+		
+		$$(at+sb,st)=(a't+s'b,s't)$$
+		
+		$$(at+sb)s't-st(a't+s'b)$$
+		
+		$$ats't+sbs't-sta't-sts'b$$
+		
+		Usando a comutatividade 
+		
+		$$atts'+bsts'-stta'-bsts'=atts'-stta'=(as'-sa')tt$$
+		
+		Multiplicando por $u$
+		
+		$$(as'-sa')ttu$$
+		
+		Mas como 
+		
+		$$(as'-sa')u=0$$
+		
+		Logo
+		
+		$$(as'-sa')ttu=0$$
+		
+		Portanto 
+		
+		$$(a,s)+(b,t)=(a',s')+(b,t)$$
+		
+		\item[Produto] Vamos tomar os produtos de  $(a,s)$ e $(a',s')$ com $(b,t)$.
+		
+		$$(a,s)*(b,t)=(ab,st)$$
+		$$(a',s')*(b,t)=(a'b,s't)$$
+		
+		Quero mostrar que 
+		
+		$$(ab,st)=(a'b,s't)$$
+		
+		Então tome 
+		
+		$$abs't-sta'b$$
+		
+		Utilizando a comutatividade para reorganizar
+		
+		$$as'bt-sa'bt$$
+		
+		Colocando em evidência
+		
+		$$(as'-sa')bt$$
+		
+		Multiplicando por $u$ temos 
+		
+		$$(as'-sa')ubt$$
+		
+		Mas sabemos que 
+		
+		$$(as'-sa')u=0$$
+		
+		Portanto 
+		
+		$$(as'-sa')ubt=0$$
+		
+		Logo $$(ab,st)=(a'b,s't)$$
+		
+	\end{enumerate}
 	
-	$\frac{a'}{b'} + \frac{c}{d}=\frac{a'd+b'c}{b'd}$
 	
-	$(ad+bc)b'd-bd(a'd+b'c)=adb'd+\cancel{bcb'd}-bda'd-\cancel{bdb'c}=adb'd-bda'd$
 	
-	Multiplicando tudo por u temos 
 	
-	$uab'dd-ua'bdd$ mas como $ab'u=ba'u$, logo $uab'dd-ua'bdd=(ab'dd-a'bdd)u=0$, ou seja, são "iguais" os resultados da soma.
-	
-	$\frac{a}{b} . \frac{c}{d} = \frac{ac}{bd}$
-	
-	$\frac{a'}{b'} . \frac{c}{d} = \frac{a'c}{b'd}$
-	
-	Utilizando novamente a relação temos que $acb'd-bda'c=ab'cd-a'bcd$ multiplicando por u vamos ficar com $ab'cdu-a'bcdu$ e usando $ab'u=ba'u$ ficaremos com $ab'cdu-a'bcdu=0$
 \end{proof}
 
-$S^{-1}A$ com a soma e a multiplicação definida acima é um anel.
+$S^{-1}A$ com a soma e a multiplicação definidas acima é um anel.
 
 Agora vamos ver alguns exemplos de anéis que podemos fazer essa construção. Mas antes vamos o que é um domínio de integridade, que é um tipo especial de anel.
 
