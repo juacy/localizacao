@@ -75,9 +75,9 @@ Temos que caso $1=0$ o anel é trivial. Já que $x=x*1=x*0=0$.
 \definition[Anéis quociente] Fazer a construção de quociente de anéis
 
 
-\section{Corpo de fração}
+\subsection{Corpo de fração}
 
-\section{Localização em anéis comutativos}
+\subsection{Localização em anéis comutativos}
 
 Vamos seguir a demonstração a partir de um anel $A$ sem unidade, na referência \cite{Atiyah} temos a demonstração feita em anel com unidade.
 
@@ -371,6 +371,189 @@ quando f é injetora? <=> sem divisor de zero
  	
  	Portanto a composição se verifica.
 	 
+\end{proof}
+
+\section{Módulo}
+
+\begin{definition}
+	Seja $A$ um anel com unidade. Chamamos um conjunto $M$ não vazio de $A$-Modulo á esquerda se $M$ é um grupo abeliano com uma operação que vamos denotar por + e se está definida uma lei de composição externa que a cada par $(\alpha, m) \in A\times M$ associa a um elemento $\alpha m in M$ e tal que para todos $\alpha_1, \alpha_2 \in A$ e $m_1, m_2 \in M$, verifica que: 
+	\begin{enumerate}
+		\item $\alpha_1(\alpha_2 m_1) = (\alpha_1 \alpha_2)m_1$
+		\item $\alpha_1(m_1+m_2) = \alpha_1 m_1 + \alpha_1 m_2$
+		\item $(\alpha_1+\alpha_2)m_1=\alpha_1 m_1+\alpha_2 m_1$
+		\item $1m_1=m_1$
+	\end{enumerate}
+\end{definition}
+
+\begin{example}
+	Todo espaço vetorial sobre um corpo K é um K-Módulo.
+\end{example}
+
+\begin{example}
+	Se tomarmos um ideal $I$ de um anel $A$, $I$ é um $A$-Modulo
+\end{example}
+
+\begin{example}
+	Se tomarmos um grupo abeliano $g$, com a seguinte operação $nx = x+x+...+x$ onde $n \in \mathbb{Z}$ e $x \in g$, temos que $g$ é um $\mathbb{Z}$-Modulo.
+\end{example}
+
+\begin{definition}
+	Seja M um A-modulo. Um subconjunto $N \subseteq M$ é dito um A-submódulo de M se:
+	\begin{enumerate}
+		\item N é um subgrupo aditivo de M
+		\item Para todo $a \in A$ e $n \in N$, temos que $an \in N$
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+	Seja M, um A-módulo, então vale as seguintes propriedades:
+	\begin{enumerate}
+		\item $0m=0$ para todo $m \in M$
+		\item $(-a)m=a(-m)=-(am)$ para todo $a \in A$ e $m \in M$
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	\begin{enumerate}
+		\item $0m=0$, de fato, pois $0m_1=(0+0)m_1=0m_1+0m_1$ adicionando $-0m_1$ em ambos lados ficamos com $0m_1=0$
+		\item $(-a)m=a(-m)=-(am)$ para $m \in M$ e $a \in A$, de fato, pois $(-a)m=(-a)m+am-(am)=(-a+a)m-(am)=-(am)$ e de forma análoga $a(-m)=a(-m)+am-(am)=a(-m+m)-(am)=-(am)$
+	\end{enumerate}
+\end{proof}
+
+\begin{proposition}
+	Um subconjunto n não vazio de m é um submódulo se e somente se
+	\begin{enumerate}
+		\item Para todo $n_1, n_2 \in n$ temos que $n_1+n_2 \in n$
+		\item Para todo $a \in A$ e $n \in N$ temos que $an \in N$
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	Para a ida, temos que se N é um submódulo, então n é um subgrupo aditivo de M, logo para $n_1, n_2 \in n$ temos que $n_1+n_2$. A segunda condição da proposição é exatamente igual a segunda condição de submódulo.
+	Para a volta, temos que  $n_1, n_2 \in n$ temos que $n_1+n_2 \in n$, isto é, n é fechado na soma. Sabemos pelo segundo item que a multiplicação de um elemento do subconjunto com um elemento do anel deve estar no subconjunto, em particular $0 n_1 = 0 \in n$(pelo item i da proposição anterior), então o elemento neutro está em n. Finalmente, sabemos que para todo $n_1$ implica em $-n_1 \in n$, pois $(-1)(n_1)=-n_1$, então $-n_1 \in n$(pelo item ii da proposição anterior). Logo n é subgrupo aditivo. E a segunda condição é idêntica.
+\end{proof}
+
+
+\subsection{Localização em módulos}
+
+Para fazer localização em módulos sobre anéis comutativos vamos seguir um caminho parecido.
+
+\begin{definition}
+	Seja A um anel comutativo, S um conjunto multiplicativo de A e M é um módulo sobre A. Vamos definir uma relação em $M \times S$ como $$(m_1,s_1) \equiv (m_2, s_2) \Leftrightarrow s(s_1m_2-s_2m_1)=0$$ para algum  $s \in S$.
+\end{definition}
+
+\begin{proposition}
+	A relação definida anteriormente é uma relação de equivalência em $M \times S$.
+\end{proposition}
+
+\begin{proof} Vamos mostrar que é um relação reflexiva, simétrica e transitiva
+	\begin{enumerate}
+		\item [Reflexiva]  $(m_1,s_1) \equiv (m_1, s_1)$, temos que $s_1m_1-s_1m_1=0$, logo $s$ pode ser qualquer elemento de $S$.
+		
+		
+		\item [Simétrica] Temos que $(m_1,s_1) \equiv (m_2, s_2)$ nos leva a $t(s_1m_2-s_2m_1)=0$ onde $s_im_j \in M$, como M é um grupo abeliano com a soma, temos que podemos os termos de lugar e pela propriedade que vimos na proposição anterior $-s(m)=s(-m)$, logo ao multiplicar por -1 temos $-s(s_1m_2-s_2m_1)=s(-s_1m_2+s_2m_1)=s(s_2m_1-s_1m_2)$, logo temos que $(m_2,s_2) \equiv (m_1, s_1)$.
+		
+		
+		\item [Transitividade] Seja $(m_1,s_1) \equiv (m_2,s_2)$ e $(m_2,s_2) \equiv (m_3,s_3)$, devemos chegar em $(m_1,s_1) \equiv (m_3,s_3)$.
+		De $(m_1,s_1) \equiv (m_2,s_2)$ temos $t_1(s_1m_2-s_2m_1)=0$ para algum $t_1 \in S$.
+		
+		De $(m_2,s_2) \equiv (m_3,s_3)$ temos $t_2(s_2m_3-s_3m_2)=0$ para algum $t_2 \in S$.
+		
+		Multiplicando a primeira equação por $t_2s_3$ e a segunda por $t_1s_1$ chegamos a 
+		$$t_2t_1s_3(s_1m_2-s_2m_1)=0 \ (*)$$
+		$$t_1t_2s_1(s_2m_3-s_3m_2)=0 \ (**)$$
+		
+		Lembrando que os únicos elementos de M são os $m_i$, o resto pertence a $S \subseteq A$, que é comutativo, logo podemos trocar a ordem dos elementos.
+		
+		Somando as equações (*) e (**) e realizando as distributivas temos 
+		$$t_2t_1s_3s_1m_2-t_2t_1s_3s_2m_1+t_1t_2s_1s_2m_3-t_1t_2s_1s_3m_2=0$$
+		
+		Reorganizando os termos com a comutatividade temos
+		
+		$$t_1t_2s_1s_3m_2-t_1t_2s_2s_3m_1+t_1t_2s_1s_2m_3-t_1t_2s_1s_3m_2=0$$
+		
+		O primeiro e o último termo são idênticos a menos de um sinal, logo ficamos com 
+		
+		$$-t_1t_2s_2s_3m_1+t_1t_2s_1s_2m_3=0$$
+		
+		Como M é um grupo abeliano, podemos trocar os termos de lugar e usando a distributiva do módulo temos 
+		
+		$$t_1t_2s_2(s_3m_1-s_1m_3)$$
+		
+		Como S é multiplicativo e $t_1 \in S$, logo $t_1t_2s_2 \in S$ e portanto $(m_1,s_1) \equiv (m_3, s_3)$.
+	\end{enumerate}
+	
+	Portanto, a relação definida em $M \times S$ é de equivalência.
+	
+\end{proof}
+
+\begin{notation}
+	Denotamos por $S^{-1}M$ o conjunto das classes de equivalência da relação acima.
+\end{notation}
+
+Com isso temos que $S^{-1}M$ é um $S^{-1}A$-Módulo.(Como mostro isso?)
+
+\begin{proposition}
+	$S^{-1}M$ é um $S^{-1}A$-Módulo com as operações $$(m_1,s_1)+(m_2,s_2)=(s_1m_2+s_2m_1,s_1s_2)$$ e $$(a_1,s_3)*(m_1,s_1)=(a_1m_1,s_3s_1)$$.
+\end{proposition}
+
+\begin{proof}
+	Devo mostrar que $S^{-1}M$ é um grupo abeliano e temos a operação de compatibilidade entre $S^{-1}A$ e $S^{-1}M$ bem definida.
+	
+	\begin{enumerate}
+		\item $S^{-1}M$ é um grupo abeliano com a operação $(m_1,s_1)+(m_2,s_2)$=$(s_1m_2+s_2m_1,s_1s_2)$, onde no primeiro termo temos a soma no módulo e no segundo temos o produto do anel.
+		
+		\begin{enumerate}
+			\item [Comutativa] $(m_1,s_1)+(m_2,s_2) = (s_1m_2+s_2m_1,s_1s_2)$
+			$(m_2,s_2)+(m_1,s_1) = (s_2m_1+s_1m_2,s_2s_1)$
+			
+			Como a primeira coordenada é um elemento de M, onde M é um grupo abeliano, logo temos a comutatividade na primeira coordenada e na segunda coordenada temos elementos de um anel comutativo, logo a segunda coordenada também comuta e portanto as duas equações são iguais.
+			
+			\item [Associativa] $((m_1,s_1)+(m_2,s_2))+(m_3,s_3)=(s_1m_2+s_2m_1,s_1s_2)+(m_3,s_3)=(s_1s_2m_3+s_1s_2m_3,s_1s_2s_3)$
+			$(m_1,s_1)+((m_2,s_2)+(m_3,s_3))=(m_1,s_1)+(s_3m_2+s_2m_3,s_3s_2)=(s_1s_3m_2+s_1s_2m_3+s_3a_2m_1, s_1s_3s_2)$
+			
+			Pela comutatividade de cada coordenada temos que as duas equações são iguais.
+			
+			\item[Elemento neutro] $(0,1)$, temos que $(m_1,s_1)+(0,1)=(s_1 0+m_1,s_1 1)=(m_1,s_1)$
+			
+			\item[Elemento inverso] Para $(m_1,s_1)$ o elemento neutro seria $(-m_1,s_1)$
+			
+			$(m_1,s_1)+(-m_1,s_1)$ tem que ser igual a alguém da classe de $(0,1)$. Até aqui não foi necessário trabalhar com as classes de equivalência diretamente, mas para provar essa propriedade é necessário.
+			
+			$(m_1,s_1)+(-m_1,s_1)=(s_1m_1-s_1m_1, s_1s_1)=(0,s_1s_1)$
+			
+			Então temos que mostrar que $(0,s_1s_1)$ é da mesma classe que $(0,1)$.
+			
+			$(0,s_1s_1)=(0,1)$ se e somente se existe $s \in S$ tal que $s(0.1-0s_1s_2)=0$, mas como $(0.1-0s_1s_2)=0$, logo $s$ pode ser qualquer elemento de $S$, portanto $(m_1,s_1)+(-m_1,s_1)=(0,s_1s_1)=(0,1)$
+		\end{enumerate}
+		
+		Logo $S^{-1}M$ é um grupo abeliano.
+		
+		\item Operação compatibilidade entre $S^{-1}A$ e $S^{-1}M$
+		$(a_1,s_3)*(m_1,s_1)=(a_1m_1,s_3s_1)$, onde $a_1\in A, m_1 \in M$ e $s_1, s_3 \in S$.
+		
+		Como $a_1m_1 \in M$, por $M$ ser um A-modulo. Como  $s_3 \in S \subseteq A$, logo $s_3s_1 \in A$, portanto está bem definida a operação.
+		
+	\end{enumerate}
+\end{proof}
+
+\begin{proposition}
+	A operação $S^{-1}$ é exata, isto é, se $M' \xrightarrow{f} M \xrightarrow{g}  M''$ é exata em $M$, então $S^{-1}M' \xrightarrow{S^{-1}f} S^{-1}M \xrightarrow{S^{-1}g}  S^{-1}M''$ é exata em $S^{-1}M$.
+\end{proposition}
+\begin{proof}
+	Sabemos que a sequência $M' \xrightarrow{f} M \xrightarrow{g}  M''$ é exata, portanto temos que $ker g = im f$, ou seja, todo mundo na imagem de f pertence ao núcleo de g, assim temos que $g(f(x))=0$ para todo x, portanto $g \circ f = 0$.
+	
+	Lembrando que se tivermos o homomorfismo $f:A \xrightarrow B$, então o homomorfismo $S^{-1}f:S^{-1}A \xrightarrow S^{-1}B$ é dado por $S^{-1}f(a/s)=f(a)/s$.
+	
+	Para mostrar que a sequência $S^{-1}M' \xrightarrow{S^{-1}f} S^{-1}M \xrightarrow{S^{-1}g}  S^{-1}M''$ é exata, devemos mostrar que $ker S^{-1}g = im S^{-1}f$.
+	
+	Primeiro vamos mostrar que $im S^{-1}f \subset ker S^{-1}g$.
+	
+	Tome $x/s$ na imagem de $S^{-1}f$
+	Temos que $S^-1g \circ S^-1f(x/s)=S^-1g(f(x)/s)=g(f(x))/s$, mas como a sequência é exata, logo $g(f(x))=0$ e portanto $g(f(x))/s=0$.
+	
+	Agora vamos mostrar que 
+	
+	
 \end{proof}
 
 
