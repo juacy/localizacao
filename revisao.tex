@@ -54,7 +54,13 @@ $$x*0-x*0=x*0+x*0-x*0$$ logo $$0=x*0$$
 
 Temos que caso $1=0$ o anel é trivial. Já que $x=x*1=x*0=0$.
 
-\definition[Subaneis] Colocar a definição de subanel aqui
+\definition[Subaneis] Seja $S \subseteq R$, onde $R$ é um anel, dizemos que $S$ é um subanel de $R$ se dados $x,y \in S$ temos:
+\begin{enumerate}
+	\item $x+y \in S$
+	\item Se $x \in S$ então $-x \in S$
+	\item $0 \in S$
+	\item $xy \in S$
+\end{enumerate}
 
 \definition[Homomorfismo] Uma função $f:A \rightarrow B $ é dita homomorfismo de anéis se:
 \begin{enumerate}
@@ -286,14 +292,86 @@ Para provar o exemplo acima, basta provar a seguinte proposição.
 	Temos que $S^{-1}A$ será o anel zero se tivemos que $0 \in S$. De fato, pois se $0 \in S$ podemos tomar u da relação de equivalência como 0, dessa forma $(ad-bc)0=0$ para todo $\frac{a}{b}$ e $\frac{c}{d}$, dessa forma todos os elementos são equivalentes entre si, em particular serão equivalente ao elemento $\frac{0}{0}$, ou seja, $S^{-1}A$ pode ser representado por um único elemento, o $\frac{0}{0}$
 \end{example}
 
-Um importante homomorfismo é $f(a)=a/1$ para $f:A->s^{-1}A$.
+Um importante homomorfismo é $f(a)=(a,1)$ para $f:A \rightarrow s^{-1}A$. Mas vamos definir esse homomorfismo para um anel $A$ sem unidade, então queremos algo como $f(a)=(as,s)$ onde $s \in S$ com $s \neq 0$.
 
-f definida para um anel sem unidade
+\begin{definition}
+	Seja $A$ um anel associativo, comutativo mas não necessariamente com unidade e $S$ um conjunto multiplicativo não vazio, então definimos o seguinte homomorfismo $f:A \rightarrow S^{-1}A$ como $f(a)=(as,s)$ onde $s \in S$ com $s \neq 0$.
+\end{definition}
+
+\begin{proposition}
+	$f:A \rightarrow S^{-1}A$ como $f(a)=(as,s)$ onde $s \in S$ com $s \neq 0$ é um homomorfismo.
+\end{proposition}
+\begin{proof}
+	\begin{enumerate}
+		\item[Soma]Queremos mostrar que$f(a+b)=f(a)+f(b)$
+		$$f(a+b)=((a+b)s,s)=(as+bs,s)$$
+		\item[Produto]
+	\end{enumerate}
+\end{proof}
 
 quando f é injetora? <=> sem divisor de zero
 
 \begin{proposition} Seja $g:A \rightarrow B$ um homomorfismo de anéis tal que $g(s)$ é invertível em $B$ para todo $s \in S$. Então existe um único homomorfismo de anel $h:S^{-1}A \rightarrow B$ tal que $g = h\circ f$
 \end{proposition}
+
+\begin{proof}
+	 Vamos definir $h(a,s)=g(a)g(s)^{-1}$
+	 
+	 Primeiro, vamos verificar que $h$ está bem definida, ou seja, não depende do representante da classe escolhido.
+	 
+	 $$(a,s)=(b,t)$$
+	 
+	 Que significa $$(at-sb)u=0 \text{ para algum } u \in S$$
+	 
+	 Mas como sabemos $g$ é um homomorfismo de $A$ para $B$ e todos elementos estão em $A$, logo podemos aplicar $g$ na igualdade.
+	 
+	 $$g((at-sb)u)=g(0)$$
+	 $$g(at-sb)g(u)=0$$
+	 $$g(at-sb)g(u)g(u)^{-1}=0g(u)^{-1}$$
+	 $$g(at-sb)=0$$
+	 $$g(a)g(t)-g(s)g(b)=0$$	 
+	 $$g(a)g(t)=g(s)g(b)$$
+	 $$g(s)^{-1}g(a)g(t)g(t)^{-1}=g(s)^{-1}g(s)g(b)g(t)^{-1}$$
+	 $$g(s)^{-1}g(a)=g(b)g(t)^{-1}$$
+	 
+	 Como estamos trabalhando com anéis comutativos
+	 
+	 $$h(a,s)=g(a)g(s)^{-1}=g(b)g(t)^{-1}=h(b,t)$$
+	 
+	 Ou seja, $h$ não depende dos representantes escolhidos.
+	 
+	 Agora vamos mostrar que $h$ é um homomorfismo.
+	 
+	 \begin{enumerate}
+	 	\item[soma] Queremos mostrar que $h((a,s)+(b,t))=h(a,s)+h(b,t)$ 
+	 	Sabemos que
+	 	$$h((a,s)+(b,t))=h(at+sb,st)=g(at+sb)g(st)^{-1}$$
+	 	$$g(at+sb)g(st)^{-1}=[g(a)g(t)+g(s)g(b)][g(s)g(t)]^{-1}$$
+	 	$$[g(a)g(t)+g(s)g(b)]g(s)^{-1}g(t)^{-1}$$
+	 	$$g(a)g(t)g(s)^{-1}g(t)^{-1}+g(s)g(b)g(s)^{-1}g(t)^{-1}$$
+	 	Utilizando a comutatividade do anel $B$
+	 	$$g(a)g(t)g(t)^{-1}g(s)^{-1}+g(b)g(s)g(s)^{-1}g(t)^{-1}$$
+	 	$$g(a)g(s)^{-1}+g(b)g(t)^{-1}=h(a,s)+h(b,t)$$
+	 	\item[produto] Queremos mostrar que $h((a,s)(b,t))=h(a,s)h(b,t)$
+	 	Sabemos que
+	 	$$h((a,s)(b,t))=h(ab,st)$$
+	 	$$h(ab,st)=g(ab)g(st)^{-1}$$
+	 	$$g(ab)g(st)^{-1}=g(ab)[g(st)]^{-1}$$
+	 	$$g(a)g(b)g(s)^{-1}g(t)^{-1}$$
+	 	Como o anel $B$ é comutativo, temos que
+	 	$$g(a)g(s)^{-1}g(b)g(t)^{-1}=h(a,s)h(b,t)$$	 	
+	 \end{enumerate}
+ 
+ 	Portanto, temos que $h$ é homomorfismo.
+ 
+ 	Agora, basta mostrar que $g = h\circ f$.
+ 	
+ 	Temos que $$ h\circ f=h(f(a))=h(as,s)$$
+ 	$$h(as,s)=g(as)g(s)^{-1}=g(a)g(s)g(s)^{-1}=g(a)$$
+ 	
+ 	Portanto a composição se verifica.
+	 
+\end{proof}
 
 
 

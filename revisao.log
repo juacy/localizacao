@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.20)  27 SEP 2022 23:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.20)  2 OCT 2022 18:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -215,37 +215,37 @@ LaTeX Warning: No \author given.
 [1
 
 {C:/Users/Pichau/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 106--108
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
-[3] [4] [5] [6] [7] (revisao.aux) ) 
+[3] [4] [5] [6] [7] [8] [9] (revisao.aux) ) 
 Here is how much of TeX's memory you used:
- 2990 strings out of 478338
- 43720 string characters out of 2836228
+ 2994 strings out of 478338
+ 43760 string characters out of 2836228
  344107 words of memory out of 3000000
- 21400 multiletter control sequences out of 15000+600000
- 482277 words of font info for 63 fonts, out of 8000000 for 9000
+ 21402 multiletter control sequences out of 15000+600000
+ 483811 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,6n,62p,455b,223s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Pichau\AppData\Local\MiKTeX\fonts
-/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\Pichau\AppData\Local\MiKTe
-X\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Pichau\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\Pichau\AppDa
-ta\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Picha
-u\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\User
-s\Pichau\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C
-:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Pichau/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Pichau/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on revisao.pdf (7 pages, 162437 bytes).
+ 55i,6n,62p,455b,227s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Pichau\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\Pichau\AppData\Loc
+al\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Pichau\AppD
+ata\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\Pich
+au\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Use
+rs\Pichau\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> 
+<C:\Users\Pichau\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm17
+28.pk><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Pichau/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Pichau/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Pichau/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on revisao.pdf (9 pages, 167963 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
+ 311 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
