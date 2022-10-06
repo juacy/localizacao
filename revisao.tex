@@ -305,8 +305,29 @@ Um importante homomorfismo é $f(a)=(a,1)$ para $f:A \rightarrow s^{-1}A$. Mas v
 	\begin{enumerate}
 		\item[Soma]Queremos mostrar que$f(a+b)=f(a)+f(b)$
 		$$f(a+b)=((a+b)s,s)=(as+bs,s)$$
-		\item[Produto]
+		$$f(a)+f(b)=(as,s)+(bs,s)=(ass+bss,ss)$$
+		Como estamos trabalhando com classes de equivalência, devo mostrar que as classes $(as+bs,s)$ e $(ass+bss,ss)$ são equivalentes. Note que 
+		$$(as+bs,s)=(ass+bss,ss)$$
+		Se e somente se
+		$$[(as+bs)ss-(ass+bss)s]u \textrm{ para algum } u \in S$$
+		Mas note que 
+		$$[(as+bs)ss-(ass+bss)s]=asss+bsss-asss-bsss=0$$
+		Portanto, podemos escolher qualquer $u \in S$, em particular vamos tomar $s$
+		$$[(as+bs)ss-(ass+bss)s]s=0$$
+		Portanto
+		$$(as+bs,s)=(ass+bss,ss)$$
+		\item[Produto]Queremos mostrar que$f(ab)=f(a)f(b)$
+		$$f(ab)=((ab)s,s)=(abs,s)$$
+		$$f(a)f(b)=(as,s)(bs,s)=(asbs,ss)$$
+		Aplicando uma estratégia semelhante ao que fizemos para a soma, queremos mostrar que $(abs,s)=(asbs,ss)$.
+		Para isto ocorrer, devemos ter 
+		$$(absss-asbss)u \textrm{ para algum } u \in S$$
+		Mas note que pela comutatividade temos que
+		$$absss-asbss=absss-absss=0$$
+		Logo podemos tomar $u=s$ e assim $(abs,s)=(asbs,ss)$.
 	\end{enumerate}
+
+	Portanto $f$ é um homomorfismo.
 \end{proof}
 
 quando f é injetora? <=> sem divisor de zero
@@ -376,7 +397,7 @@ quando f é injetora? <=> sem divisor de zero
 \section{Módulo}
 
 \begin{definition}
-	Seja $A$ um anel com unidade. Chamamos um conjunto $M$ não vazio de $A$-Modulo á esquerda se $M$ é um grupo abeliano com uma operação que vamos denotar por + e se está definida uma lei de composição externa que a cada par $(\alpha, m) \in A\times M$ associa a um elemento $\alpha m in M$ e tal que para todos $\alpha_1, \alpha_2 \in A$ e $m_1, m_2 \in M$, verifica que: 
+	Seja $A$ um anel com unidade. Chamamos um conjunto $M$ não vazio de $A$-Modulo á esquerda se $M$ é um grupo abeliano com uma operação que vamos denotar por + e se está definida uma lei de composição externa que a cada par $(\alpha, m) \in A\times M$ associa a um elemento $\alpha m \ in M$ e tal que para todos $\alpha_1, \alpha_2 \in A$ e $m_1, m_2 \in M$, verifica que: 
 	\begin{enumerate}
 		\item $\alpha_1(\alpha_2 m_1) = (\alpha_1 \alpha_2)m_1$
 		\item $\alpha_1(m_1+m_2) = \alpha_1 m_1 + \alpha_1 m_2$
@@ -401,7 +422,7 @@ quando f é injetora? <=> sem divisor de zero
 	Seja M um A-modulo. Um subconjunto $N \subseteq M$ é dito um A-submódulo de M se:
 	\begin{enumerate}
 		\item N é um subgrupo aditivo de M
-		\item Para todo $a \in A$ e $n \in N$, temos que $an \in N$
+		\item Para todo $\alpha \in A$ e $n \in N$, temos que $an \in N$
 	\end{enumerate}
 \end{definition}
 
