@@ -292,7 +292,9 @@ Para provar o exemplo acima, basta provar a seguinte proposição.
 	Temos que $S^{-1}A$ será o anel zero se tivemos que $0 \in S$. De fato, pois se $0 \in S$ podemos tomar u da relação de equivalência como 0, dessa forma $(ad-bc)0=0$ para todo $\frac{a}{b}$ e $\frac{c}{d}$, dessa forma todos os elementos são equivalentes entre si, em particular serão equivalente ao elemento $\frac{0}{0}$, ou seja, $S^{-1}A$ pode ser representado por um único elemento, o $\frac{0}{0}$
 \end{example}
 
-Um importante homomorfismo é $f(a)=(a,1)$ para $f:A \rightarrow s^{-1}A$. Mas vamos definir esse homomorfismo para um anel $A$ sem unidade, então queremos algo como $f(a)=(as,s)$ onde $s \in S$ com $s \neq 0$.
+\begin{remark}
+	Um importante homomorfismo é $f(a)=(a,1)$ para $f:A \rightarrow s^{-1}A$. Mas vamos definir esse homomorfismo para um anel $A$ sem unidade, então queremos algo como $f(a)=(as,s)$ onde $s \in S$ com $s \neq 0$. Na referência \cite{Atiyah} temos o resultado para um anel com unidade.
+\end{remark}
 
 \begin{definition}
 	Seja $A$ um anel associativo, comutativo mas não necessariamente com unidade e $S$ um conjunto multiplicativo não vazio, então definimos o seguinte homomorfismo $f:A \rightarrow S^{-1}A$ como $f(a)=(as,s)$ onde $s \in S$ com $s \neq 0$.
@@ -330,7 +332,21 @@ Um importante homomorfismo é $f(a)=(a,1)$ para $f:A \rightarrow s^{-1}A$. Mas v
 	Portanto $f$ é um homomorfismo.
 \end{proof}
 
-quando f é injetora? <=> sem divisor de zero
+\begin{proposition}
+	Seja $f:A \rightarrow S^{-1}A$ como $f(a)=(as,s)$ onde $s \in S$ com $s \neq 0$ um homomorfismo de anéis. $f$ é um homomorfismo injetor se e somente se $S$ não possui divisores de zero e $0 \notin S$.
+\end{proposition}
+
+\begin{proof}
+	$\Leftarrow$ Temos que $f$ é injetora se $f(a)=f(b)$ então $a=b$.
+	$$f(a)=f(b)=(as,s)=(bs,s)$$
+	Logo temos que
+	$$(ass-sbs)u=0 \textrm{ para algum } u \in S$$
+	Utilizando a comutatividade de $A$ e colocando $s$ em evidência temos que
+	$$(a-b)ssu=0 \textrm{ para algum } u \in S$$
+	Note que como $S$ não possui divisores de zero e nem o elemento nulo, logo $ssu \neq 0$ e assim $(a-b)=0$ logo $(a=b)$, portanto $f$ é injetora.	
+	\newline
+	$\Rightarrow$
+\end{proof}
 
 \begin{proposition} Seja $g:A \rightarrow B$ um homomorfismo de anéis tal que $g(s)$ é invertível em $B$ para todo $s \in S$. Então existe um único homomorfismo de anel $h:S^{-1}A \rightarrow B$ tal que $g = h\circ f$
 \end{proposition}
