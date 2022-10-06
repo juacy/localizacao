@@ -345,7 +345,7 @@ Para provar o exemplo acima, basta provar a seguinte proposição.
 	$$(a-b)ssu=0 \textrm{ para algum } u \in S$$
 	Note que como $S$ não possui divisores de zero e nem o elemento nulo, logo $ssu \neq 0$ e assim $(a-b)=0$ logo $(a=b)$, portanto $f$ é injetora.	
 	\newline
-	$\Rightarrow$
+	$\Rightarrow$ Fazer a volta
 \end{proof}
 
 \begin{proposition} Seja $g:A \rightarrow B$ um homomorfismo de anéis tal que $g(s)$ é invertível em $B$ para todo $s \in S$. Então existe um único homomorfismo de anel $h:S^{-1}A \rightarrow B$ tal que $g = h\circ f$
@@ -413,14 +413,17 @@ Para provar o exemplo acima, basta provar a seguinte proposição.
 \section{Módulo}
 
 \begin{definition}
-	Seja $A$ um anel com unidade. Chamamos um conjunto $M$ não vazio de $A$-Modulo á esquerda se $M$ é um grupo abeliano com uma operação que vamos denotar por + e se está definida uma lei de composição externa que a cada par $(\alpha, m) \in A\times M$ associa a um elemento $\alpha m \ in M$ e tal que para todos $\alpha_1, \alpha_2 \in A$ e $m_1, m_2 \in M$, verifica que: 
+	Seja $A$ um anel associativo, comutativo e não necessariamente com unidade. Chamamos um conjunto $M$ não vazio de $A$-Modulo á esquerda se $M$ é um grupo abeliano com uma operação que vamos denotar por + e se está definida uma lei de composição externa que a cada par $(\alpha, m) \in A\times M$ associa a um elemento $\alpha m \in M$ e tal que para todos $\alpha_1, \alpha_2 \in A$ e $m_1, m_2 \in M$, verifica que: 
 	\begin{enumerate}
 		\item $\alpha_1(\alpha_2 m_1) = (\alpha_1 \alpha_2)m_1$
 		\item $\alpha_1(m_1+m_2) = \alpha_1 m_1 + \alpha_1 m_2$
 		\item $(\alpha_1+\alpha_2)m_1=\alpha_1 m_1+\alpha_2 m_1$
-		\item $1m_1=m_1$
 	\end{enumerate}
 \end{definition}
+
+\begin{remark}
+	Os módulos podem ser definidos para anéis com unidades, mas para isso precisamos adicionar a condição $1m_1=m_1$ para $m_1 \in M$. Um módulo com essa propriedade é chamado de módulo unital.
+\end{remark}
 
 \begin{example}
 	Todo espaço vetorial sobre um corpo K é um K-Módulo.
@@ -475,7 +478,7 @@ Para provar o exemplo acima, basta provar a seguinte proposição.
 Para fazer localização em módulos sobre anéis comutativos vamos seguir um caminho parecido.
 
 \begin{definition}
-	Seja A um anel comutativo, S um conjunto multiplicativo de A e M é um módulo sobre A. Vamos definir uma relação em $M \times S$ como $$(m_1,s_1) \equiv (m_2, s_2) \Leftrightarrow s(s_1m_2-s_2m_1)=0$$ para algum  $s \in S$.
+	Seja A um anel associativo e comutativo, S um conjunto multiplicativo de A e M é um módulo sobre A. Vamos definir uma relação em $M \times S$ como $$(m_1,s_1) \equiv (m_2, s_2) \Leftrightarrow s(s_1m_2-s_2m_1)=0$$ para algum  $s \in S$.
 \end{definition}
 
 \begin{proposition}
@@ -487,7 +490,8 @@ Para fazer localização em módulos sobre anéis comutativos vamos seguir um ca
 		\item [Reflexiva]  $(m_1,s_1) \equiv (m_1, s_1)$, temos que $s_1m_1-s_1m_1=0$, logo $s$ pode ser qualquer elemento de $S$.
 		
 		
-		\item [Simétrica] Temos que $(m_1,s_1) \equiv (m_2, s_2)$ nos leva a $t(s_1m_2-s_2m_1)=0$ onde $s_im_j \in M$, como M é um grupo abeliano com a soma, temos que podemos os termos de lugar e pela propriedade que vimos na proposição anterior $-s(m)=s(-m)$, logo ao multiplicar por -1 temos $-s(s_1m_2-s_2m_1)=s(-s_1m_2+s_2m_1)=s(s_2m_1-s_1m_2)$, logo temos que $(m_2,s_2) \equiv (m_1, s_1)$.
+		\item [Simétrica] Temos que $(m_1,s_1) \equiv (m_2, s_2)$ nos leva a $t(s_1m_2-s_2m_1)=0$ onde $s_im_j \in M$, como M é um grupo abeliano com a soma, temos que podemos os termos de lugar e pela propriedade que vimos na proposição anterior $-s(m)=s(-m)$, logo ao somar os opostos temos $$-t(s_1m_2-s_2m_1)+t(s_1m_2-s_2m_1)=-t(s_1m_2-s_2m_1)$$
+		$$t(-s_1m_2+s_2m_1)=t(s_2m_1-s_1m_2)=0$$ logo temos que $(m_2,s_2) \equiv (m_1, s_1)$.
 		
 		
 		\item [Transitividade] Seja $(m_1,s_1) \equiv (m_2,s_2)$ e $(m_2,s_2) \equiv (m_3,s_3)$, devemos chegar em $(m_1,s_1) \equiv (m_3,s_3)$.
@@ -499,7 +503,7 @@ Para fazer localização em módulos sobre anéis comutativos vamos seguir um ca
 		$$t_2t_1s_3(s_1m_2-s_2m_1)=0 \ (*)$$
 		$$t_1t_2s_1(s_2m_3-s_3m_2)=0 \ (**)$$
 		
-		Lembrando que os únicos elementos de M são os $m_i$, o resto pertence a $S \subseteq A$, que é comutativo, logo podemos trocar a ordem dos elementos.
+		Lembrando que os únicos elementos de $M$ são os $m_i$, o resto pertence a $S \subseteq A$, que é comutativo, logo podemos trocar a ordem dos elementos.
 		
 		Somando as equações (*) e (**) e realizando as distributivas temos 
 		$$t_2t_1s_3s_1m_2-t_2t_1s_3s_2m_1+t_1t_2s_1s_2m_3-t_1t_2s_1s_3m_2=0$$
@@ -512,11 +516,11 @@ Para fazer localização em módulos sobre anéis comutativos vamos seguir um ca
 		
 		$$-t_1t_2s_2s_3m_1+t_1t_2s_1s_2m_3=0$$
 		
-		Como M é um grupo abeliano, podemos trocar os termos de lugar e usando a distributiva do módulo temos 
+		Como $M$ é um grupo abeliano, podemos trocar os termos de lugar e usando a distributiva do módulo temos 
 		
 		$$t_1t_2s_2(s_3m_1-s_1m_3)$$
 		
-		Como S é multiplicativo e $t_1 \in S$, logo $t_1t_2s_2 \in S$ e portanto $(m_1,s_1) \equiv (m_3, s_3)$.
+		Como S é multiplicativo e $t_1, t_2 \in S$, logo $t_1t_2s_2 \in S$ e portanto $(m_1,s_1) \equiv (m_3, s_3)$.
 	\end{enumerate}
 	
 	Portanto, a relação definida em $M \times S$ é de equivalência.
@@ -527,40 +531,63 @@ Para fazer localização em módulos sobre anéis comutativos vamos seguir um ca
 	Denotamos por $S^{-1}M$ o conjunto das classes de equivalência da relação acima.
 \end{notation}
 
-Com isso temos que $S^{-1}M$ é um $S^{-1}A$-Módulo.(Como mostro isso?)
+Agora vamos mostrar que $S^{-1}M$ é um $S^{-1}A$-Módulo.
 
 \begin{proposition}
 	$S^{-1}M$ é um $S^{-1}A$-Módulo com as operações $$(m_1,s_1)+(m_2,s_2)=(s_1m_2+s_2m_1,s_1s_2)$$ e $$(a_1,s_3)*(m_1,s_1)=(a_1m_1,s_3s_1)$$.
 \end{proposition}
 
 \begin{proof}
-	Devo mostrar que $S^{-1}M$ é um grupo abeliano e temos a operação de compatibilidade entre $S^{-1}A$ e $S^{-1}M$ bem definida.
+	Devo mostrar que $S^{-1}M$ é um grupo abeliano com a soma e temos a operação de compatibilidade entre $S^{-1}A$ e $S^{-1}M$ bem definida. Mas antes disso precisamos mostrar que a soma está bem definida, ou seja, não depende dos representantes de classe.
 	
 	\begin{enumerate}
+		\item A operação de soma está bem definida. Seja $(m_1,s_1)=(m_2,s_2)$ e tome $(m,s)$, queremos mostrar que $(m_1,s_1)+(m_s)=(m_2,s_2)+(m,s)$.
+		Temos que $(m_1,s_1)+(m,s)=(s_1m+sm_1,s_1s)$ e $(m_2,s_2)+(m,s)=(s_2m+sm_2,s_2s)$. Da hipótese da igualdade das classes temos que $u(s_1m_2-s_2m_1)=0$ para algum $u \in S$.
+		Queremos mostrar que
+		$$(s_1m+sm_1,s_1s)=(s_2m+sm_2,s_2s)$$
+		Sabemos que $$(s_2m+sm_2)s_1s-(s_1m+sm_1)s_2s$$
+		Mas como estamos trabalhando com comutatividade podemos reorganizar e aplicando a distributiva, temos
+		$$ss_1s_2m+sss_1m_2-ss_1s_2m-sss_2m_1=ss(s_1m2-s_2m1)$$
+		Podemos multiplicar por $u$
+		$$ssu(s_1m2-s_2m1)=ss0=0$$
+		Portanto $(s_1m+sm_1,s_1s)=(s_2m+sm_2,s_2s)$
+		
 		\item $S^{-1}M$ é um grupo abeliano com a operação $(m_1,s_1)+(m_2,s_2)$=$(s_1m_2+s_2m_1,s_1s_2)$, onde no primeiro termo temos a soma no módulo e no segundo temos o produto do anel.
 		
 		\begin{enumerate}
-			\item [Comutativa] $(m_1,s_1)+(m_2,s_2) = (s_1m_2+s_2m_1,s_1s_2)$
-			$(m_2,s_2)+(m_1,s_1) = (s_2m_1+s_1m_2,s_2s_1)$
+			\item [Comutativa] $$(m_1,s_1)+(m_2,s_2) = (s_1m_2+s_2m_1,s_1s_2)$$
+			$$(m_2,s_2)+(m_1,s_1) = (s_2m_1+s_1m_2,s_2s_1)$$
 			
 			Como a primeira coordenada é um elemento de M, onde M é um grupo abeliano, logo temos a comutatividade na primeira coordenada e na segunda coordenada temos elementos de um anel comutativo, logo a segunda coordenada também comuta e portanto as duas equações são iguais.
 			
-			\item [Associativa] $((m_1,s_1)+(m_2,s_2))+(m_3,s_3)=(s_1m_2+s_2m_1,s_1s_2)+(m_3,s_3)=(s_1s_2m_3+s_1s_2m_3,s_1s_2s_3)$
-			$(m_1,s_1)+((m_2,s_2)+(m_3,s_3))=(m_1,s_1)+(s_3m_2+s_2m_3,s_3s_2)=(s_1s_3m_2+s_1s_2m_3+s_3a_2m_1, s_1s_3s_2)$
+			\item [Associativa] $$((m_1,s_1)+(m_2,s_2))+(m_3,s_3)=(s_1m_2+s_2m_1,s_1s_2)+(m_3,s_3)$$
+			$$(s_3(s_1m_2+s_2m_1)+s_1s_2m_3,s_1s_2s_3)=(s_3s_1m_2+s_3s_2m_1+s_1s_2m_3,s_1s_2s_3)$$
+			
+			Agora desenvolvendo por outra ordem
+			$$(m_1,s_1)+((m_2,s_2)+(m_3,s_3))=(m_1,s_1)+(s_3m_2+s_2m_3,s_3s_2)$$
+			$$=(s_1(s_3m_2+s_2m_3)+s_3s_2m_1,s_1s_3s_2)=(s_1s_3m_2+s_1s_2m_3+s_3a_2m_1, s_1s_3s_2)$$
 			
 			Pela comutatividade de cada coordenada temos que as duas equações são iguais.
 			
-			\item[Elemento neutro] $(0,1)$, temos que $(m_1,s_1)+(0,1)=(s_1 0+m_1,s_1 1)=(m_1,s_1)$
+			\item[Elemento neutro] $(0,s)$, temos que $(m_1,s_1)+(0,s)=(s_1 0+m_1s,s_1s)=(m_1s,s_1s)$
+			
+			Mas note que $(m_1s,s_1s)=(m_1,s_1)$, ou seja, são classes equivalentes. De fato, pois 
+			
+			$$m_1ss_1-m_1s_1s=0$$
+			
+			Pela comutatividade, logo podemos tomar qualquer $u \in S$ de tal forma que $u(m_1ss_1-m_1s_1s)=0$
+			
+			Portanto, $(m_1,s_1)+(0,s)=(m_1s,s_1s)=(m_1,s_1)$.
 			
 			\item[Elemento inverso] Para $(m_1,s_1)$ o elemento neutro seria $(-m_1,s_1)$
 			
-			$(m_1,s_1)+(-m_1,s_1)$ tem que ser igual a alguém da classe de $(0,1)$. Até aqui não foi necessário trabalhar com as classes de equivalência diretamente, mas para provar essa propriedade é necessário.
+			$(m_1,s_1)+(-m_1,s_1)$ tem que ser igual a alguém da classe de $(0,s)$. 
 			
-			$(m_1,s_1)+(-m_1,s_1)=(s_1m_1-s_1m_1, s_1s_1)=(0,s_1s_1)$
+			$$(m_1,s_1)+(-m_1,s_1)=(s_1m_1-s_1m_1, s_1s_1)=(0,s_1s_1)$$
 			
-			Então temos que mostrar que $(0,s_1s_1)$ é da mesma classe que $(0,1)$.
+			Então temos que mostrar que $(0,s_1s_1)$ é da mesma classe que $(0,s)$.
 			
-			$(0,s_1s_1)=(0,1)$ se e somente se existe $s \in S$ tal que $s(0.1-0s_1s_2)=0$, mas como $(0.1-0s_1s_2)=0$, logo $s$ pode ser qualquer elemento de $S$, portanto $(m_1,s_1)+(-m_1,s_1)=(0,s_1s_1)=(0,1)$
+			$(0,s_1s_1)=(0,s)$ se e somente se existe $u \in S$ tal que $u(0s-0s_1s_2)=0$, mas como $(0s-0s_1s_2)=0$, logo $u$ pode ser qualquer elemento de $S$, portanto $(m_1,s_1)+(-m_1,s_1)=(0,s_1s_1)=(0,s)$
 		\end{enumerate}
 		
 		Logo $S^{-1}M$ é um grupo abeliano.
