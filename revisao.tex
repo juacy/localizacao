@@ -472,6 +472,33 @@ Para provar o exemplo acima, basta provar a seguinte proposição.
 	Para a volta, temos que  $n_1, n_2 \in n$ temos que $n_1+n_2 \in n$, isto é, n é fechado na soma. Sabemos pelo segundo item que a multiplicação de um elemento do subconjunto com um elemento do anel deve estar no subconjunto, em particular $0 n_1 = 0 \in n$(pelo item i da proposição anterior), então o elemento neutro está em n. Finalmente, sabemos que para todo $n_1$ implica em $-n_1 \in n$, pois $(-1)(n_1)=-n_1$, então $-n_1 \in n$(pelo item ii da proposição anterior). Logo n é subgrupo aditivo. E a segunda condição é idêntica.
 \end{proof}
 
+\begin{definition}
+	Sejam $M$ e $N$ dois $A$-Módulos. Uma função $f:M \rightarrow N$ diz-se um homomorfismo de $A$-módulos se para todo $m_1, m_2 \in M$ e todo $a \in A$
+	\begin{enumerate}
+		\item $f(m_1+m_2)=f(m_1)+f(m_2)$
+		\item $f(am_1)=af(m_1)$
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	Sejam $F, G, H$ três $A$-módulos e $f:F\rightarrow G$, $g:G\rightarrow H$ $A$-morfismos. Diz-se que o diagrama:
+	$$F \xrightarrow{f} G \xrightarrow{g}
+	H$$
+	é uma sequência de ordem 2 em $G$ se im(f)$subset$ ker(g).
+	Em particular, se im(f)=ker(g) o diagrama diz-se uma sequência exata em G.
+\end{definition}
+
+\begin{proposition}
+	Seja $f:F \rightarrow G$ e $g:G \rightarrow H$ $A$-morfismos então
+	$im(f)\subset ker(g)$ se e somente se $g \circ f =0$
+\end{proposition}
+\begin{proof}
+	$\Rightarrow$Temos que se	
+	$im(f)\subset ker(g)$, então $g(f(a))=0$ para todo $a \in F$, mas $g(f(a))=g \circ f(a)=0$
+	
+	$\Leftarrow$ $g \circ f =0$, então $f(a) \in ker(g)$ para todo $a \in F$, logo $im(f) \subset ker(g)$.
+\end{proof}
+
 
 \subsection{Localização em módulos}
 
