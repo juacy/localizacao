@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.20)  7 NOV 2022 17:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.20)  20 NOV 2022 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -215,12 +215,13 @@ LaTeX Warning: No \author given.
 [1
 
 {C:/Users/Pichau/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
  []
 
-[3] [4] [5] [6] [7] [8] [9] [10]
-Overfull \hbox (9.14246pt too wide) in paragraph at lines 524--526
+[4] [5] [6] [7] [8] [9] [10] [11] [12]
+Overfull \hbox (9.14246pt too wide) in paragraph at lines 597--599
 []\T1/cmr/m/n/10 Seja $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m[]; s[]\OT1/cmr/m/n/1
 0 ) \OMS/cmsy/m/n/10 ^^Q \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m[]; s[]\OT1/cmr/m/n
 /10 )$ \T1/cmr/m/n/10 e $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m[]; s[]\OT1/cmr/m/n
@@ -229,8 +230,8 @@ Overfull \hbox (9.14246pt too wide) in paragraph at lines 524--526
  m[]; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^Q
  []
 
-[11] [12]
-Overfull \hbox (14.21599pt too wide) detected at line 591
+[13]
+Overfull \hbox (14.21599pt too wide) detected at line 664
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]m[] \
 OT1/cmr/m/n/10 + \OML/cmm/m/it/10 s[]m[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 s[
 ]s[]m[]; s[]s[]s[]\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 s[]s[]m[] \OT1/cmr/m/n/
@@ -239,7 +240,7 @@ OT1/cmr/m/n/10 + \OML/cmm/m/it/10 s[]m[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 s[
  []
 
 
-Overfull \hbox (25.36989pt too wide) detected at line 595
+Overfull \hbox (25.36989pt too wide) detected at line 668
 \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]m[]
  \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 s[]m[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 
 s[]s[]m[]; s[]s[]s[]\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 s[]s[]m[] \OT1/cmr/m/
@@ -247,8 +248,8 @@ n/10 + \OML/cmm/m/it/10 s[]s[]m[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 s[]a[]m[];
  s[]s[]s[]\OT1/cmr/m/n/10 )
  []
 
-[13]
-Overfull \hbox (24.30302pt too wide) in paragraph at lines 622--624
+[14]
+Overfull \hbox (24.30302pt too wide) in paragraph at lines 695--697
 []\T1/cmr/m/n/10 Operação com-pat-i-bil-i-dade en-tre $\OML/cmm/m/it/10 S[]A$ \
 T1/cmr/m/n/10 e $\OML/cmm/m/it/10 S[]M$ $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[];
  s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m[
@@ -256,32 +257,33 @@ T1/cmr/m/n/10 e $\OML/cmm/m/it/10 S[]M$ $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[];
 /cmr/m/n/10 ,
  []
 
-
-Overfull \hbox (9.16736pt too wide) in paragraph at lines 642--644
-[]\T1/cmr/m/n/10 Tome $\OML/cmm/m/it/10 x=s$ \T1/cmr/m/n/10 na im-agem de $\OML
-/cmm/m/it/10 S[]f$ \T1/cmr/m/n/10 Temos que $\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/1
-0 1\OML/cmm/m/it/10 g \OMS/cmsy/m/n/10 ^^N \OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 
-1\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x=s\OT1/cmr/m/n/10 ) = \OM
-L/cmm/m/it/10 S[]\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m
-/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =s
-\OT1/cmr/m/n/10 ) =
+[15]
+Overfull \hbox (13.9902pt too wide) in paragraph at lines 732--734
+[]\T1/cmr/m/n/10 Tome $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a; s\OT1/cmr/m/n/10 )$
+ \T1/cmr/m/n/10 na im-agem de $\OML/cmm/m/it/10 S[]f$ \T1/cmr/m/n/10 Temos que 
+$\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 g \OMS/cmsy/m/n/10 ^^N \
+OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 a; s\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 1\OML/cmm/
+m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a
+\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (5.3563pt too wide) in paragraph at lines 642--644
-\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/
-m/it/10 x\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 =s$\T1/cmr/m/n/10 , mas como a se-q
-uên-cia é ex-ata, logo $\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\O
-T1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )) = 0$ \T1/cmr/m/n/10 e por-t
-anto $\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OM
-L/cmm/m/it/10 x\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 =s \OT1/cmr/m/n/10 =
+Overfull \hbox (19.3713pt too wide) in paragraph at lines 732--734
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/
+m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10
+ )$\T1/cmr/m/n/10 , mas como a se-quên-cia é ex-ata, logo $\OML/cmm/m/it/10 g\O
+T1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/
+n/10 )) = 0$ \T1/cmr/m/n/10 e por-tanto $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT
+1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n
+/10 ))\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) =
  []
 
-[14] [15] (revisao.aux) ) 
+[16] [17] (revisao.aux) ) 
 Here is how much of TeX's memory you used:
  2996 strings out of 478338
  43782 string characters out of 2836228
- 347109 words of memory out of 3000000
+ 348109 words of memory out of 3000000
  21403 multiletter control sequences out of 15000+600000
  484587 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -294,20 +296,21 @@ iKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\Pichau\AppData\
 Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Pichau\A
 ppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\P
 ichau\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/U
-sers/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10
+sers/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10
 .pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmmi7.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr10.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmr5.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Pichau/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Pichau/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Pichau/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Pi
-chau/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb>
-Output written on revisao.pdf (15 pages, 219038 bytes).
+/cm/cmmi10.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><C:/Users/Pichau/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Pichau/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Pichau/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Pichau/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/P
+ichau/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C
+:/Users/Pichau/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb>
+Output written on revisao.pdf (17 pages, 237119 bytes).
 PDF statistics:
- 368 PDF objects out of 1000 (max. 8388607)
+ 382 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -67,8 +67,81 @@ Temos que caso $1=0$ o anel é trivial. Já que $x=x*1=x*0=0$.
 	\item $f(x+y)=f(x)+f(y)$
 	\item $f(xy)=f(x)f(y)$
 \end{enumerate}
+
+\begin{definition}Seja R um anel. $I \subseteq R$ com $I \neq \emptyset$ dizemos que I é um ideal de R se:
+	\begin{enumerate}
+		\item $0_R \in I$
+		\item $x,y \in I$ então $x+y \in I$
+		\item $a \in R$ e $x \in I$ então $ax \in I$
+	\end{enumerate}
+\end{definition} 
  
-\definition[Ideais(maximal e primo)] Colocar a definição de ideal, ideal maximal, ideal primo
+\begin{definition}
+	[Ideais(maximal e primo)] Colocar a definição de ideal, ideal maximal, ideal primo
+\end{definition}
+
+\begin{definition}
+	Seja $R$ um anel e $S \subseteq R$ com $S \neq \emptyset$, dizemos que o ideal gerado pelo conjunto S é $<S>=\{ \sum_{i=1}^{n} a_i s_i | n \geq 0, a_i \in R, s_i \in S, 1 \leq i \leq n\}$.
+\end{definition}
+
+\begin{proposition}
+	Seja $R$ um anel e $S \subseteq R$ então <S> é um ideal de R.
+\end{proposition}
+\begin{proof}
+	\begin{enumerate}
+		\item $0_R \in <S>$.
+		
+		Temos que $S \neq \emptyset$, tome $x \in S$ temos que $0_R x = 0_R \in <S>$.
+		
+		\item $x, y \in <S>$ então $x+y \in <S>$.
+		
+		Temos então que $x=\sum_{i=1}^{k}a_i x_i$ e $y=\sum_{j=1}^{m}b_j y_j$ onde $a_i, b_j \in R$ e $x_i, y_j \in S$.
+		
+		Temos então $x+y=\sum_{i=1}^{k}a_i x_i + \sum_{j=1}^{m}b_j y_j = \sum_{l=1}^{k+m} c_l z_l$ onde $c_l = a_i$, $z_l = x_i$  quando $1 \leq l \leq k$ e $c_l = b_i$, $z_l = y_i$  quando $k+1 \leq l \leq k+m$ portanto $x+y \in <S>$
+		
+		\item $a \in R$ e $x\in <S>$ então $x+y \in <S>$.
+		
+		Temos então que $x=\sum_{i=1}^{k}a_i x_i$, logo $ax=a\sum_{i=1}^{k}a_i x_i = \sum_{i=1}^{k}aa_i x_i \in <S>$.
+	\end{enumerate}
+
+	Portanto <S> é um ideal de R.
+\end{proof}
+
+\begin{proposition}
+	Seja $f:A \rightarrow B$ um homomorfismo de anéis e J um ideal de B então $f^{-1}(J)$ é um ideal de A. Ou seja, a pré-imagem de um ideal é um ideal.
+\end{proposition}
+\begin{proof}
+	Primeiro vamos a definição da pré-imagem de J. $$f^{-1}(J)=\{x \in A | f(x) \in J\}$$
+	
+	\begin{enumerate}
+		\item $0_A \in f^{-1}(J)$
+		
+		Temos que J é um ideal de B, então é claro que $0_B \in J$. Mas como $f$ é um homomorfismo então temos que $f(0_A)=0_B$, logo $0_A \in f^{-1}(J)$.
+		
+		\item $x,y \in f^{-1}(J)$ então $x+y \in f^{-1}(J)$
+		
+		Como $x,y \in f^{-1}(J)$ então temos que $f(x),f(y) \in J$. Como J é um ideal então $f(x)+f(y) \in J$. Temos também que f é um homomorfismo de anéis então $f(x)+f(y)=f(x+y) \in J$, logo $x+y \in f^{-1}(J)$. 
+		
+		\item $a \in A$ e $x \in f^{-1}(J)$ então $ax \in f^{-1}(J)$
+		
+		Como $x \in f^{-1}(J)$ então temos que $f(x) \in J$, como J é ideal então $f(a) \in B$ e logo $f(a)f(x) \in J$ e $f(a)f(x)=f(ax)$ pois f é um homomorfismo portanto $ax \in f^{-1}(J)$.
+	\end{enumerate}
+
+	Portanto a pré imagem de um ideal é um ideal no anel do domínio do homomorfismo.
+\end{proof}
+
+	Seja $f:A \rightarrow B$ um homomorfismo de anéis e I um ideal de A, não podemos garantir que $f(I)$ é um ideal de B.
+	
+	Tome $i:\mathbb{Z} \rightarrow \mathbb{Q}$ sendo $i(x)=x$. Temos que $\mathbb{Q}$ é um corpo, portanto seus únicos ideias são $\{0\}$ e $\mathbb{Q}$. Tome $2\mathbb{Z}$ ideal de $\mathbb{Z}$ temos que $i(2\mathbb{Z}) \neq \{0\}$ e $i(2\mathbb{Z}) \neq \mathbb{Q}$ portanto não é um ideal de $\mathbb{Q}$.
+	
+\begin{definition}
+	Seja $f:A \rightarrow B$ um homomorfismo de anéis e I um ideal de A. Dizemos que a extensão de I, denotada por $I^{e}$ é o ideal gerado por $<f(I)>$. Ou seja, é um ideal em B.
+\end{definition}
+
+\begin{definition}
+	Seja $f:A \rightarrow B$ um homomorfismo de anéis e J um ideal de B. Dizemos que a contração de J, denotada por $J^{c}$ é $<f^{-1}(J)>$. Ou seja, é um ideal em A.
+\end{definition}
+
 
 \definition[Divisores de zero] Colocar a definição de divisores de zero
 
@@ -484,8 +557,8 @@ Para provar o exemplo acima, basta provar a seguinte proposição.
 	Sejam $F, G, H$ três $A$-módulos e $f:F\rightarrow G$, $g:G\rightarrow H$ $A$-morfismos. Diz-se que o diagrama:
 	$$F \xrightarrow{f} G \xrightarrow{g}
 	H$$
-	é uma sequência de ordem 2 em $G$ se im(f)$subset$ ker(g).
-	Em particular, se im(f)=ker(g) o diagrama diz-se uma sequência exata em G.
+	é uma sequência de ordem 2 em $G$ se $im(f)$subset$ ker(g)$.
+	Em particular, se $im(f)=ker(g)$ o diagrama diz-se uma sequência exata em G.
 \end{definition}
 
 \begin{proposition}
@@ -628,24 +701,51 @@ Agora vamos mostrar que $S^{-1}M$ é um $S^{-1}A$-Módulo.
 \end{proof}
 
 \begin{proposition}
+	Seja $u:M \rightarrow N$ um $A-$homomorfismo. Então nós temos que $S^{-1}A$-modulo homomorfismo $S^{-1}u:S^{-1}M \rightarrow S^{-1}N$ que toma $(m,s)$ para $(u(m),s)$.
+\end{proposition}
+\begin{proof}
+	Para mostrar que $S^{-1}u$ é um homomorfismo, devemos mostrar que 
+	\begin{enumerate}
+		\item $S^{-1}u(m,s)+S^{-1}u(n,t)=S^{-1}u((m,s)+(n,t))$
+		
+		$S^{-1}u(m,s)+S^{-1}u(n,t)=(u(m),s)+(u(n),t)=(tu(m)+su(n),st)=(u(tm)+u(sn),st)=
+		(u(tm+sn),st)=S^{-1}u(tm+sn,st)=S^{-1}u((m,s)+(n,t))$
+		
+		\item $S^{-1}u((a,r)*(m,s))=(a,r)*S^{-1}u(m,s)$, onde $(a,r) \in S^{-1}A$
+		
+		$S^{-1}u((a,r)*(m,s))=S^{-1}u(am,rs)=(u(am),rs)=(au(m),rs)=(a,r)*(u(m),s)=(a,r)*S^{-1}u((m,s))$
+	\end{enumerate}
+\end{proof}
+
+\begin{proposition}
 	A operação $S^{-1}$ é exata, isto é, se $M' \xrightarrow{f} M \xrightarrow{g}  M''$ é exata em $M$, então $S^{-1}M' \xrightarrow{S^{-1}f} S^{-1}M \xrightarrow{S^{-1}g}  S^{-1}M''$ é exata em $S^{-1}M$.
 \end{proposition}
 \begin{proof}
-	Sabemos que a sequência $M' \xrightarrow{f} M \xrightarrow{g}  M''$ é exata, portanto temos que $ker g = im f$, ou seja, todo mundo na imagem de f pertence ao núcleo de g, assim temos que $g(f(x))=0$ para todo x, portanto $g \circ f = 0$.
+	Sabemos que a sequência $M' \xrightarrow{f} M \xrightarrow{g}  M''$ é exata, portanto temos que $ker (g) = im (f)$, ou seja, todo mundo na imagem de f pertence ao núcleo de g, assim temos que $g(f(x))=0$ para todo x, portanto $g \circ f = 0$.
 	
-	Lembrando que se tivermos o homomorfismo $f:A \xrightarrow B$, então o homomorfismo $S^{-1}f:S^{-1}A \xrightarrow S^{-1}B$ é dado por $S^{-1}f(a/s)=f(a)/s$.
+	Lembrando que se tivermos o homomorfismo $f:A \rightarrow B$, então o homomorfismo $S^{-1}f:S^{-1}A \rightarrow S^{-1}B$ é dado por $S^{-1}f(a,s)=(f(a),s)$.
 	
-	Para mostrar que a sequência $S^{-1}M' \xrightarrow{S^{-1}f} S^{-1}M \xrightarrow{S^{-1}g}  S^{-1}M''$ é exata, devemos mostrar que $ker S^{-1}g = im S^{-1}f$.
+	Para mostrar que a sequência $S^{-1}M' \xrightarrow{S^{-1}f} S^{-1}M \xrightarrow{S^{-1}g}  S^{-1}M''$ é exata, devemos mostrar que $ker (S^{-1}g) = im (S^{-1}f)$.
 	
-	Primeiro vamos mostrar que $im S^{-1}f \subset ker S^{-1}g$.
+	Primeiro vamos mostrar que $im (S^{-1}f) \subset ker (S^{-1}g)$.
 	
-	Tome $x/s$ na imagem de $S^{-1}f$
-	Temos que $S^-1g \circ S^-1f(x/s)=S^-1g(f(x)/s)=g(f(x))/s$, mas como a sequência é exata, logo $g(f(x))=0$ e portanto $g(f(x))/s=0$.
+	Tome $(a,s)$ na imagem de $S^{-1}f$
+	Temos que $S^-1g \circ S^-1f(a,s)=S^-1g(f(a),s)=(g(f(a)),s)$, mas como a sequência é exata, logo $g(f(x))=0$ e portanto $(g(f(x)),s)=(0,s)$.
 	
 	Agora vamos mostrar que 
 	
 	
 \end{proof}
+
+Itens a resolver nesse texto
+
+\begin{enumerate}
+	\item Arrumar a demonstração da proposição 2.17
+	\item Mostrar que a função da proposição 2.16 está bem definida(classes de equivalência)
+	\item Arrumar a demonstração da proposição 2.15, para 4 termos e não 3
+	\item Proposição 1.25
+	\item Proposição 1.15
+\end{enumerate}
 
 
 
